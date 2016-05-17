@@ -55,20 +55,33 @@ Link tài liệu tham khảo cài đặt: https://docs.docker.com/installation/c
  * Kiểm tra trên giao diện web, truy cập vào địa chỉ:  
    * localhost:8080  
 
-# Hướng dẫn sử dụng cho người phát triển (Developer)  
+### Hướng dẫn sử dụng cho người phát triển (Developer)  
 * Viết Dockerfile để đóng gói ứng dụng OpenCPS, bao gồm các thành phần   
     *  Java 7  
     *  Ứng dụng OpenCPS  
   * Chú ý: Trong cấu hình Dockerfile, có câu lệnh  
     *  RUN wget -q http://172.17.0.1/server.zip -O /server.zip \   
-    *  Ứng dụng OpenCPS được đóng gói với tên là server.zip.  
-    *  Sau đó sử dụng giao thức http để download gói ưng dụng trên localhost  
+    *  Ứng dụng OpenCPS được đóng gói với tên là server.zip.   
+    *  Sau đó sử dụng giao thức http để download gói ưng dụng trên localhost   
     *  Cách làm  
       *  Cài http  
-         #yum -y install httpd  
+         ```#yum -y install httpd```   
       * Chown quyền httpd  
-         #chown apache:apache /var/www/html  
-      * Copy file server.zip vaò trong thư mục /var/www/html  
-         #cp server.zip /var/www/html   
-* Tạo image từ Dockerfile  
-  #docker build -t opencps/liferay-all-in-one:0.0.1 -t opencps/liferay-all-in-one:latest .  
+         ```#chown apache:apache /var/www/html```  
+      * Copy file server.zip vaò trong thư mục /var/www/html   
+         ```#cp server.zip /var/www/html```   
+
+* Tạo image từ Dockerfile   
+  ```#docker build -t opencps/liferay-all-in-one:0.0.1 -t opencps/liferay-all-in-one:latest .```   
+* Tạo Docker-compose   
+  * Mục đích để tự động hóa quá trình tạo các container, thay vì phải gõ các tham số bằng command line   
+  * Trong file Docker-compose này được cấu hình để tạo ra 2 containers  
+    * Một container chạy database  
+    * Một container chạy ứng dụng OpenCPS  
+  * Chạy lệnh sau để tạo các containers từ Docker-compose  
+    ```#docker-compose -f docker-compose.yml up -d```  
+  * Kiểm tra kết quả   
+    * Sử dụng command line   
+      ```#docker ps```   
+    * Sử dụng giao diện web, truy cập vào địa chỉ  
+      http://localhost:8080   
