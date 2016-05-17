@@ -57,18 +57,18 @@ Link tài liệu tham khảo cài đặt: https://docs.docker.com/installation/c
 
 # Hướng dẫn sử dụng cho người phát triển (Developer)  
 * Viết Dockerfile để đóng gói ứng dụng OpenCPS, bao gồm các thành phần   
-    *  Java 7
-    *  Ứng dụng OpenCPS
-  * Chú ý: Trong cấu hình Dockerfile, có câu lệnh 
-    *  RUN wget -q http://172.17.0.1/server.zip -O /server.zip \  
-    *  Ứng dụng OpenCPS được đóng gói với tên là server.zip.
-    *  Sau đó sử dụng giao thức http để download gói ưng dụng trên localhost
-    *  Cách làm
-      *  Cài http
-         #yum -y install httpd
-      * Chown quyền httpd
-         #chown apache:apache /var/www/html
-      * Copy file server.zip vaò trong thư mục /var/www/html
-         #cp server.zip /var/www/html 
+    *  Java 7  
+    *  Ứng dụng OpenCPS  
+  * Chú ý: Trong cấu hình Dockerfile, có câu lệnh  
+    *  RUN wget -q http://172.17.0.1/server.zip -O /server.zip \   
+    *  Ứng dụng OpenCPS được đóng gói với tên là server.zip.  
+    *  Sau đó sử dụng giao thức http để download gói ưng dụng trên localhost  
+    *  Cách làm  
+      *  Cài http  
+         #yum -y install httpd  
+      * Chown quyền httpd  
+         #chown apache:apache /var/www/html  
+      * Copy file server.zip vaò trong thư mục /var/www/html  
+         #cp server.zip /var/www/html   
 * Tạo image từ Dockerfile  
-  #docker build -t opencps/liferay-all-in-one:0.0.1 -t opencps/liferay-all-in-one:latest .
+  #docker build -t opencps/liferay-all-in-one:0.0.1 -t opencps/liferay-all-in-one:latest .  
