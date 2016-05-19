@@ -1,15 +1,15 @@
 # Author: VietOpenCPS
 #
-# Build: docker build -t opencps/liferay-all-in-one:0.0.1 -t opencps/liferay-all-in-one:latest .
-# Run: docker run -d -p 8080:8080 --name vietopencps opencps/liferay-all-in-one
+# Build: docker build -t opencps/liferay-all-in-one:0.01 .
+# Run: docker run -d -p 8080:8080 --name vietopencps opencps/liferay-all-in-one:0.01
 #
 
 FROM java:7-jdk
 MAINTAINER Tan Nguyen Van "tan.nv@netnam.vn"
 
-RUN wget -q http://172.17.0.1/server.zip -O /server.zip \
-    && unzip /server.zip \
-    && rm /server.zip
+RUN wget -q http://172.17.0.1/server.tar.gz -O /server.tar.gz \
+    && tar -zxvf /server.tar.gz \
+    && rm /server.tar.gz
 
 COPY config/* /server/
 

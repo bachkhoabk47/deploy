@@ -6,9 +6,9 @@ function gen_config() {
 
     DB_HOST=${DB_HOST:-mariadb}
     DB_PORT=${DB_PORT:-3306}
-    DB_USERNAME=${DB_USERNAME:-liferay}
-    DB_PASSWORD=${DB_PASSWORD:-lab@123}
-    DB_DATABASE=${DB_DATABASE:-opencps_portal}
+    DB_USERNAME=${DB_USERNAME:-root}
+    DB_PASSWORD=${DB_PASSWORD:-lab@secret}
+    DB_DATABASE=${DB_DATABASE:-opencps10}
 
     # generate file config
     cp ${PATH_CONFIG}/portal-ide.properties.default ${PATH_CONFIG}/portal-ide.properties

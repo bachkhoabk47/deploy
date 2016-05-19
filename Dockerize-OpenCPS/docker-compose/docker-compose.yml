@@ -3,7 +3,7 @@
 # - username: test@liferay.com
 # - password: test
 #
-# syntax: https://docs.docker.com/compose/yml/
+# syntax: https://hub.docker.com/u/opencps/ 
 #
 
 version: "2"
@@ -24,11 +24,12 @@ services:
         volumes:
             - ./mariadb-data/:/var/lib/mysql/
             - ./mariadb-init-data/:/docker-entrypoint-initdb.d/
+            - ./mariadb-mycnf/my.cnf:/etc/mysql/my.cnf
         environment:
-            - MYSQL_ROOT_PASSWORD=Fds@2016
+            - MYSQL_ROOT_PASSWORD=lab@secret
             - MYSQL_USER=liferay
             - MYSQL_PASSWORD=lab@123
-            - MYSQL_DATABASE=opencps_portal
+            - MYSQL_DATABASE=opencps10
         ports:
           - "3306:3306"
         networks:
