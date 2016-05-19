@@ -45,7 +45,7 @@ Link tài liệu tham khảo cài đặt: https://docs.docker.com/installation/c
 
 ### Hướng dẫn triển khai demo  
 * Bước 1: Download file Docker-compose  
-  ```#wget https://github.com/VietOpenCPS/deploy/blob/master/Dockerize-OpenCPS/compose/docker-compose.yml```  
+  ```#wget https://github.com/VietOpenCPS/deploy/blob/master/Dockerize-OpenCPS/docker-compose/docker-compose.yml```  
 * Bước 2: Chạy Docker-compose để tạo các containers  
   ```#docker-compose -f docker-compose.yml up -d```  
 * Bước 3: Kiểm tra  
