@@ -4,7 +4,7 @@
 * Mọi người sẽ download image về và sử dụng theo hướng dẫn  
 
 ### Version hiện tại của ứng dụng:  
-* Version OpenCPS v0.0.1  
+* Version OpenCPS v1.0   
 
 ### Các thành phần đóng gói:  
 * Ứng dụng OpenCPS
@@ -44,7 +44,7 @@ Link tài liệu tham khảo cài đặt: https://docs.docker.com/installation/c
   ```#chmod +x /usr/local/bin/docker-compose```  
 
 ### Hướng dẫn triển khai demo  
-* Bước 1: Download svn về
+* Bước 1: Download svn về  
   ```#yum -y install svn```  
 * Bước 2: Download thư mục Docker-compose  
   ```#svn export https://github.com/VietOpenCPS/deploy.git/trunk/Dockerize-OpenCPS/docker-compose```  
