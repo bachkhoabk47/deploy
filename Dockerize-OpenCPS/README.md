@@ -44,11 +44,15 @@ Link tài liệu tham khảo cài đặt: https://docs.docker.com/installation/c
   ```#chmod +x /usr/local/bin/docker-compose```  
 
 ### Hướng dẫn triển khai demo  
-* Bước 1: Download file Docker-compose  
-  ```#wget https://raw.githubusercontent.com/VietOpenCPS/deploy/master/Dockerize-OpenCPS/docker-compose/docker-compose.yml```  
-* Bước 2: Chạy Docker-compose để tạo các containers  
+* Bước 1: Download svn về
+  ```#yum -y install svn```  
+* Bước 2: Download thư mục Docker-compose  
+  ```#svn export https://github.com/VietOpenCPS/deploy.git/trunk/Dockerize-OpenCPS/docker-compose```  
+* Bước 3: Truy cập vào thư mục docker-compose
+  ```#cd docker-compose```
+* Bước 4: Chạy Docker-compose để tạo các containers  
   ```#docker-compose -f docker-compose.yml up -d```  
-* Bước 3: Kiểm tra  
+* Bước 5: Kiểm tra  
  * Trên command line:  
    ```#docker ps```               (Sẽ xuất hiện 2 containers)  
    ```#netstat -plnt```           (Port 8080 sẽ mở)  
